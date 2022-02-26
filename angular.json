@@ -86,9 +86,21 @@
           "options": {
             "browserTarget": "jokenpo:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "jokenpo"
+  "defaultProject": "jokenpo",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
