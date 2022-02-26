@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "jokepo": {
+    "jokenpo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/jokepo",
+            "outputPath": "dist/jokenpo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,7 +31,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/scss/global.scss"
             ],
             "scripts": []
           },
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "jokepo:build:production"
+              "browserTarget": "jokenpo:build:production"
             },
             "development": {
-              "browserTarget": "jokepo:build:development"
+              "browserTarget": "jokenpo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,11 +83,11 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "jokepo:build"
+            "browserTarget": "jokenpo:build"
           }
         }
       }
     }
   },
-  "defaultProject": "jokepo"
+  "defaultProject": "jokenpo"
 }

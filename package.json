@@ -1,5 +1,5 @@
 {
-  "name": "jokepo",
+  "name": "jokenpo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -26,6 +26,7 @@
     "@angular-devkit/build-angular": "~13.2.5",
     "@angular/cli": "~13.2.5",
     "@angular/compiler-cli": "~13.2.0",
+    "@testing-library/angular": "^11.0.3",
     "@types/jest": "^27.4.1",
     "@types/node": "^12.11.1",
     "jasmine-core": "~4.0.0",
