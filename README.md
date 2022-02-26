@@ -18,10 +18,13 @@ This is a home task project to create a Jokenpo game in Angular.
     - [npm run prettier:apply - apply prettier in all your files](#npm-run-prettierapply---apply-prettier-in-all-your-files)
     - [npm run lint - run lint in the project](#npm-run-lint---run-lint-in-the-project)
     - [npm run lint:fix - run and apply lint in the project](#npm-run-lintfix---run-and-apply-lint-in-the-project)
-    - [npm run compodoc:build - To build compodoc](#npm-run-compodocbuild---to-build-compodoc)
-    - [npm run compodoc:build-and-serve - Build and serve compodoc](#npm-run-compodocbuild-and-serve---build-and-serve-compodoc)
-    - [npm run compodoc:serve - Run server with compodoc](#npm-run-compodocserve---run-server-with-compodoc)
+    - [npm run compodoc:build - to build compodoc](#npm-run-compodocbuild---to-build-compodoc)
+    - [npm run compodoc:build-and-serve - build and serve compodoc](#npm-run-compodocbuild-and-serve---build-and-serve-compodoc)
+    - [npm run compodoc:serve - run server with compodoc](#npm-run-compodocserve---run-server-with-compodoc)
+    - [npm run cypress:open - run cypress with browser](#npm-run-cypressopen---run-cypress-with-browser)
+    - [npm run cypress:run - run cypress in headless mode](#npm-run-cypressrun---run-cypress-in-headless-mode)
   - [Husky](#husky)
+  - [Tests](#tests)
   - [Considerations](#considerations)
   - [Possible improvements](#possible-improvements)
   - [Deploy](#deploy)
@@ -105,19 +108,25 @@ This command is to run eslint using the `.eslintrc.json` file rules
 
 This command is to run eslint using the `.eslintrc.json` file rules and fix any error found
 
-### npm run compodoc:build - To build compodoc
+### npm run compodoc:build - to build compodoc
 
 Build compodoc and generate the documentation
 
-### npm run compodoc:build-and-serve - Build and serve compodoc
+### npm run compodoc:build-and-serve - build and serve compodoc
 
 It will generate the document and serve in the port `8080`.
 
-### npm run compodoc:serve - Run server with compodoc
+### npm run compodoc:serve - run server with compodoc
 
 If you already have compodoc files generated you can simple run the serve with this command, it will run on port `8080`
 
+### npm run cypress:open - run cypress with browser
 
+It will open the Cypress devtools and run the tests.
+
+### npm run cypress:run - run cypress in headless mode
+
+Useful to run on CI.
 ## Husky
 
 I've added Husky to enable some hooks to run before commit and pushing code. I've added the following git hooks:
@@ -125,6 +134,8 @@ I've added Husky to enable some hooks to run before commit and pushing code. I'v
 * pre-commit: In pre-commit I decide to run fast checkers: `npm run prettier:check` and `npm run lint`
 * pre-push: In pre-push I decide to run all quality suite: `npm run prettier:check`, `npm run lint`, `npm run test` and `npm run build`
 * commit-msg: use commit lint to enforce angular conventional and good commit messages
+
+## Tests
 
 ## Considerations
 
