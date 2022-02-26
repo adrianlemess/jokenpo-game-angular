@@ -9,10 +9,16 @@ This is a home task project to create a Jokenpo game in Angular.
   - [Requirements to run](#requirements-to-run)
   - [How to install dependencies](#how-to-install-dependencies)
   - [Scripts](#scripts)
-    - [npm start - development mode](#npm-start---development-mode)
-    - [npm run build - Build project](#npm-run-build---build-project)
-    - [npm test - running unit tests](#npm-test---running-unit-tests)
-    - [npm run test:ci Running e2e tests](#npm-run-testci-running-e2e-tests)
+    - [npm start - run development mode](#npm-start---run-development-mode)
+    - [npm run build - build project](#npm-run-build---build-project)
+    - [npm test - run unit tests](#npm-test---run-unit-tests)
+    - [npm run test:watch - run unit tests in watch mode](#npm-run-testwatch---run-unit-tests-in-watch-mode)
+    - [npm run test:e2e - run e2e tests](#npm-run-teste2e---run-e2e-tests)
+    - [npm run prettier:check - run prettier](#npm-run-prettiercheck---run-prettier)
+    - [npm run prettier:apply - apply prettier in all your files](#npm-run-prettierapply---apply-prettier-in-all-your-files)
+    - [npm run lint - run lint in the project](#npm-run-lint---run-lint-in-the-project)
+    - [npm run lint:fix - run and apply lint in the project](#npm-run-lintfix---run-and-apply-lint-in-the-project)
+  - [Husky](#husky)
   - [Considerations](#considerations)
   - [Possible improvements](#possible-improvements)
   - [Deploy](#deploy)
@@ -61,20 +67,47 @@ npm install
 ```
 
 ## Scripts
-### npm start - development mode
+### npm start - run development mode
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-### npm run build - Build project
+### npm run build - build project
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### npm test - running unit tests
+### npm test - run unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the test suite with [Jest](http://jestjs.io)
 
-### npm run test:ci Running e2e tests
+### npm run test:watch - run unit tests in watch mode
+
+Run `npm test` and execute tests with --watch flag mode
+
+### npm run test:e2e - run e2e tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+### npm run prettier:check - run prettier
+
+Will run the prettier in the project with the flag --check. This will let us know if we have files that have not been formatted.
+
+### npm run prettier:apply - apply prettier in all your files
+
+If you forgot to apply prettier in some of your files, you can simple run this command
+
+### npm run lint - run lint in the project
+
+This command is to run eslint using the `.eslintrc.json` file rules
+
+### npm run lint:fix - run and apply lint in the project
+
+This command is to run eslint using the `.eslintrc.json` file rules and fix any error found
+
+## Husky
+
+I've added Husky to enable some hooks to run before commit and pushing code. I've added the following git hooks:
+
+* pre-commit: In pre-commit I decide to run fast checkers: `npm run prettier:check` and `npm run lint`
+* pre-push: In pre-push I decide to run all quality suite: `npm run prettier:check`, `npm run lint`, `npm run test` and `npm run build`
 
 ## Considerations
 
