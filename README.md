@@ -18,6 +18,9 @@ This is a home task project to create a Jokenpo game in Angular.
     - [npm run prettier:apply - apply prettier in all your files](#npm-run-prettierapply---apply-prettier-in-all-your-files)
     - [npm run lint - run lint in the project](#npm-run-lint---run-lint-in-the-project)
     - [npm run lint:fix - run and apply lint in the project](#npm-run-lintfix---run-and-apply-lint-in-the-project)
+    - [npm run compodoc:build - To build compodoc](#npm-run-compodocbuild---to-build-compodoc)
+    - [npm run compodoc:build-and-serve - Build and serve compodoc](#npm-run-compodocbuild-and-serve---build-and-serve-compodoc)
+    - [npm run compodoc:serve - Run server with compodoc](#npm-run-compodocserve---run-server-with-compodoc)
   - [Husky](#husky)
   - [Considerations](#considerations)
   - [Possible improvements](#possible-improvements)
@@ -101,6 +104,19 @@ This command is to run eslint using the `.eslintrc.json` file rules
 ### npm run lint:fix - run and apply lint in the project
 
 This command is to run eslint using the `.eslintrc.json` file rules and fix any error found
+
+### npm run compodoc:build - To build compodoc
+
+Build compodoc and generate the documentation
+
+### npm run compodoc:build-and-serve - Build and serve compodoc
+
+It will generate the document and serve in the port `8080`.
+
+### npm run compodoc:serve - Run server with compodoc
+
+If you already have compodoc files generated you can simple run the serve with this command, it will run on port `8080`
+
 
 ## Husky
 
