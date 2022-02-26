@@ -108,6 +108,7 @@ I've added Husky to enable some hooks to run before commit and pushing code. I'v
 
 * pre-commit: In pre-commit I decide to run fast checkers: `npm run prettier:check` and `npm run lint`
 * pre-push: In pre-push I decide to run all quality suite: `npm run prettier:check`, `npm run lint`, `npm run test` and `npm run build`
+* commit-msg: use commit lint to enforce angular conventional and good commit messages
 
 ## Considerations
 
