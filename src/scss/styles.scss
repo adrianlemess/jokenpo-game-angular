@@ -1,0 +1,10 @@
+@import './variables';
+
+body {
+    min-height: 100%;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif !important;
+    line-height: 1em;
+    position: relative;
+    background: $gray_light;
+  }
+  
