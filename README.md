@@ -25,6 +25,7 @@ This is a home task project to create a Jokenpo game in Angular.
     - [npm run cypress:run - run cypress in headless mode](#npm-run-cypressrun---run-cypress-in-headless-mode)
   - [Husky](#husky)
   - [Tests](#tests)
+  - [Business layer](#business-layer)
   - [Considerations](#considerations)
   - [Possible improvements](#possible-improvements)
   - [Deploy](#deploy)
@@ -136,6 +137,24 @@ I've added Husky to enable some hooks to run before commit and pushing code. I'v
 * commit-msg: use commit lint to enforce angular conventional and good commit messages
 
 ## Tests
+
+## Business layer
+
+I've started the application by thinking about the model and how I would model the application. For doing this I've decided to use two design patterns: `Strategy` and `Factory`. 
+
+The following diagram was my initial idea:
+
+![Architecture diagram](/docs-image/diagram.png)
+
+Some enums are not connected because they will be used across my component and views.
+
+I have two factories:
+
+* JokenpoStrategyFactory - responsible to return a strategy that match with the type passed.
+* HandFactory - has two method to return the hand with the correspondent strategy. 
+  * create: we pass the option type and return the correspondent hand
+  * createForComputer: it's a method to return with a random logic, a hand with strategy.
+* As the logic to know which hand win of each hand (example: Rock x Paper), it's the logic we'd probably change in the future if we need to add a new hand, I isolated as a strategy, this way if we need to add a new hand we will not update the previous one, only the strategy layer. 
 
 ## Considerations
 
