@@ -24,7 +24,12 @@ This is a home task project to create a Jokenpo game in Angular.
 
 ## Deploy status
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0ebd19f0-c150-4bb2-9dd1-e32ffcc8d5e7/deploy-status)](https://app.netlify.com/sites/jokenpo-game-adrian/deploys)
+
+
+| Branch          | Status                     | 
+|-----------------|----------------------------|
+| Application          | [![Netlify Status](https://api.netlify.com/api/v1/badges/0ebd19f0-c150-4bb2-9dd1-e32ffcc8d5e7/deploy-status)](https://app.netlify.com/sites/jokenpo-game-adrian/deploys) |
+| Documentation | [![Netlify Status](https://api.netlify.com/api/v1/badges/edf9446b-336b-460d-b6a8-1bfd5f8cce22/deploy-status)](https://app.netlify.com/sites/jokenpo-adrian-docs/deploys) |
 ## Board with tasks
 
 If you would like to check how I organize my tasks, you can check my board on Trello [here](https://trello.com/b/wX98RPXL/anaconda-home-task)
