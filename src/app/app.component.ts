@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StrategyError } from './core/errors';
 
 @Component({
     selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'jokenpo';
+
+    constructor() {}
 }
