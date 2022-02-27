@@ -165,6 +165,8 @@ I have two factories:
 * Moved Karma/Jasmine to Jest and Testing library, to have quick tests running and also to focus on integration tests with Testing library
 
 ## Possible improvements
+
+* Add preview environment URL every time a PR is opened
 ## Deploy
 
 To make the code shippable to production, I've setup two ways, the first one with Dockerfile and the second one with CI and Netlify.
