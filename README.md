@@ -24,8 +24,6 @@ This is a home task project to create a Jokenpo game in Angular.
 
 ## Deploy status
 
-
-
 | Branch          | Status                     | 
 |-----------------|----------------------------|
 | Application          | [![Netlify Status](https://api.netlify.com/api/v1/badges/0ebd19f0-c150-4bb2-9dd1-e32ffcc8d5e7/deploy-status)](https://app.netlify.com/sites/jokenpo-game-adrian/deploys) |
@@ -131,6 +129,7 @@ I have two factories:
 ## Possible improvements
 
 * Add preview environment URL every time a PR is opened
+* Add test coverage badge on Readme
 ## Deploy
 
 To make the code shippable to production, I've setup two ways, the first one with Dockerfile and the second one with CI and Netlify.
@@ -158,6 +157,18 @@ After that, you can access the application with this URL in your browser:
 
 
 ### Using Github Actions and Deploying into Netlify
+
+Every code into `main` branch, trigger a pipeline with the following stages:
+
+* Inspections: Run some commands to guarantee the quality of the code. All commands are executed in the order by time to be executed: faster -> longer
+  * lint
+  * prettier:check
+  * test
+* Build: Build and store the following artifacts
+  * dist folder
+  * documentation
+* Deploy netlify - deploy the application from `dist` folder on Netlify
+* Deploy netlify - deploy the static documentation generated inside the `documentation` folder on Netlify
 
 ## Author
 
