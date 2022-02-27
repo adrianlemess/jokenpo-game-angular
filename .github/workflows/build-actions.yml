@@ -115,7 +115,7 @@ jobs:
         run: netlify deploy --prod
 
   deploy_compodoc:
-    name: Deploy to Compodoc to Netlify
+    name: Deploy Compodoc to Netlify
     runs-on: ubuntu-latest
     timeout-minutes: 15
     needs: [inspections, build]
