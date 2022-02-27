@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 15
     strategy:
       matrix:
-        inspection_command: ["lint", "prettier:check", "test", "build"]
+        inspection_command: ["lint", "prettier:check", "test"]
 
     steps:
       - name: Checkout
@@ -47,6 +47,9 @@ jobs:
 
       - name: Run inspection
         run: npm run ${{ matrix.inspection_command }}
+
+      - name: Run build
+        run: npm run build
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v2
