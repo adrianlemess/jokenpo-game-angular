@@ -45,7 +45,7 @@ If you would like to check how I organize my tasks, you can check my board on Tr
 
 ## URL deployed
 
-If you want to test the application deployed you can check [here]()
+If you want to test the application deployed you can check [here](https://jokenpo-game-adrian.netlify.app)
 ## Resources used
 
 * [Angular](http://angular.io) - Framework used. Version 13 choose, is the last one until the moment.
