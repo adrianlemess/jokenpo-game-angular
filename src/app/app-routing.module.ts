@@ -5,7 +5,7 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        loadChildren: () => import('./home/welcome.module').then((m) => m.HomeModule),
+        loadChildren: () => import('./home/welcome.module').then((m) => m.WelcomeModule),
     },
     {
         path: 'game-session',
