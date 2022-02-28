@@ -1,0 +1,12 @@
+<div class="carousel container-fluid">
+    <h1>{{ carouselTitle }}</h1>
+    <h3>{{ carouselSubtitle }}</h3>
+
+    <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let hand of hands">
+            <div class="wrapper carousel">
+                <img [src]="hand.avatarImgUrl" class="image" [alt]="'Hand image' + hand.name" />
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
