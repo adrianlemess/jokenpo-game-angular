@@ -1,5 +1,18 @@
 import { PLAYER_TYPE } from '../enums';
 
-export class Player {
-    constructor(public name: string, public playerType: PLAYER_TYPE, public score: number = 0) {}
+export interface PlayerInput {
+    username: string;
+    playerType: PLAYER_TYPE;
+    score: number;
+}
+export class Player implements PlayerInput {
+    username: string;
+    playerType: PLAYER_TYPE;
+    score: number;
+
+    constructor(player: PlayerInput) {
+        this.username = player.username;
+        this.playerType = player.playerType;
+        this.score = player.score;
+    }
 }
