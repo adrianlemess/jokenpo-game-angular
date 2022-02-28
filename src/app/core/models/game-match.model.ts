@@ -2,8 +2,8 @@ import { Player } from './player.model';
 
 export class GameMatch {
     constructor(
-        private firstPlayer: Player,
-        private secondPlayer: Player,
+        public firstPlayer: Player,
+        public secondPlayer: Player,
         private matchScoreEnd: number
     ) {}
 
@@ -15,13 +15,5 @@ export class GameMatch {
         }
 
         return null;
-    }
-
-    increaseFirstPlayerScore() {
-        this.firstPlayer.score++;
-    }
-
-    increaseSecondPlayerScore() {
-        this.secondPlayer.score++;
     }
 }

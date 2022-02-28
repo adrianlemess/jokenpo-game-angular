@@ -15,4 +15,8 @@ export class Player implements PlayerInput {
         this.playerType = player.playerType;
         this.score = player.score;
     }
+
+    increaseScore() {
+        this.score++;
+    }
 }
