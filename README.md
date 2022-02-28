@@ -47,7 +47,7 @@ If you want to test the application deployed you can check [here](https://jokenp
 *  [Material IO](https://material.angular.io) - Style library with Angular components based on Material UI
 *  [Docker](https://www.docker.com) - To create containers and help to ship the project to run in an environment with support (like k8s)
 *  [Netlify](https://www.netlify.com) - Netlify unites an entire ecosystem of modern tools and services into a single, simple workflow for building high performance sites and apps.
-
+* [NgBootstrap](https://ng-bootstrap.github.io/#/home) - Used for the carousel component
 ## Requirements to run
 
 * NodeJS LTS version v16.13.1
