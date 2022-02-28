@@ -5,7 +5,11 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        loadChildren: () => import('./home/welcome.module').then((m) => m.WelcomeModule),
+        redirectTo: 'welcome',
+    },
+    {
+        path: 'welcome',
+        loadChildren: () => import('./welcome/welcome.module').then((m) => m.WelcomeModule),
     },
     {
         path: 'game-session',
@@ -14,7 +18,7 @@ const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: '',
+        redirectTo: 'welcome',
     },
 ];
 
