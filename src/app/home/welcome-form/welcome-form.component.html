@@ -1,0 +1,94 @@
+<form [formGroup]="this.jokenpoForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="welcome-form">
+        <mat-card-header>
+            <mat-card-title>Game configurations</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-card-subtitle>First player information</mat-card-subtitle>
+            <div class="row" formGroupName="firstPlayer">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Username" formControlName="username" />
+                    </mat-form-field>
+                    <mat-error *ngIf="isRequired('firstPlayer.username')">
+                        First player username is <strong>required</strong>
+                    </mat-error>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input
+                            matInput
+                            type="number"
+                            min="0"
+                            placeholder="Start with score"
+                            formControlName="score"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col">
+                    <label matTooltip="Info about the action">Type of player: </label>
+                    <mat-radio-group formControlName="playerType">
+                        <mat-radio-button [value]="playerType.HUMAN">Human</mat-radio-button>
+                        <mat-radio-button [value]="playerType.COMPUTER">Computer</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <mat-card-subtitle>Second player information</mat-card-subtitle>
+            <div class="row" formGroupName="secondPlayer">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Username" formControlName="username" />
+                    </mat-form-field>
+                    <mat-error *ngIf="isRequired('secondPlayer.username')">
+                        Second player username is <strong>required</strong>
+                    </mat-error>
+                </div>
+
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input
+                            matInput
+                            type="number"
+                            min="0"
+                            placeholder="Start with score"
+                            formControlName="score"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col">
+                    <label>Second player is always a computer </label>
+                    <mat-radio-group formControlName="playerType">
+                        <mat-radio-button [value]="playerType.HUMAN">Human</mat-radio-button>
+                        <mat-radio-button [value]="playerType.COMPUTER">Computer</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <mat-card-subtitle>Game configurations</mat-card-subtitle>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <input
+                            matInput
+                            type="number"
+                            min="0"
+                            placeholder="Score to finish the game"
+                            formControlName="matchScoreEnd"
+                        />
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button
+                mat-raised-button
+                [disabled]="this.jokenpoForm.invalid"
+                color="primary"
+                type="submit"
+            >
+                Start the game
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</form>

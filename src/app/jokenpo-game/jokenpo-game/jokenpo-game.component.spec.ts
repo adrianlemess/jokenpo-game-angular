@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestingModule } from '../../testing/testing.module';
 
 import { JokenpoGameComponent } from './jokenpo-game.component';
 
@@ -9,6 +10,7 @@ describe('JokenpoGameComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [JokenpoGameComponent],
+            imports: [TestingModule],
         }).compileComponents();
     });
 
