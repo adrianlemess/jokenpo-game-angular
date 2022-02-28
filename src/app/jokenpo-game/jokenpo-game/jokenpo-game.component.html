@@ -1,5 +1,41 @@
-<app-scoreboard
-    [firstPlayer]="this.gameConfigs.firstPlayer"
-    [secondPlayer]="this.gameConfigs.secondPlayer"
-    scoreboardTitle="Jokenpo Match"
-></app-scoreboard>
+<div class="row">
+    <div class="col">
+        <app-hands-carousel
+            [hands]="listHands"
+            [carouselTitle]="this.gameConfigs.firstPlayer.username"
+            [carouselSubtitle]="this.gameConfigs.firstPlayer.playerType"
+        ></app-hands-carousel>
+    </div>
+    <div class="col">
+        <app-scoreboard
+            [firstPlayer]="this.gameConfigs.firstPlayer"
+            [secondPlayer]="this.gameConfigs.secondPlayer"
+            scoreboardTitle="Jokenpo Match"
+        ></app-scoreboard>
+    </div>
+    <div class="col">
+        <app-hands-carousel
+            [hands]="listHands"
+            [carouselTitle]="this.gameConfigs.secondPlayer.username"
+            [carouselSubtitle]="this.gameConfigs.secondPlayer.playerType"
+        ></app-hands-carousel>
+    </div>
+    <div class="row">
+        <div class="col display-center">
+            <mat-button-toggle-group
+                class="jokenpo-game__button-toggle"
+                name="fontStyle"
+                aria-label="Font Style"
+            >
+                <mat-button-toggle *ngFor="let hand of listHands" value="bold">
+                    <img
+                        [src]="hand.avatarImgUrl"
+                        class="jokenpo-game__icon"
+                        [alt]="'Hand image' + hand.name"
+                    />
+                    {{ hand.name }}</mat-button-toggle
+                >
+            </mat-button-toggle-group>
+        </div>
+    </div>
+</div>

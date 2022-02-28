@@ -28,4 +28,12 @@ export class HandFactoryService {
         const randomHandType = randomEnum(HAND_TYPE);
         return this.create(randomHandType);
     }
+
+    getAllHands() {
+        return [
+            new ScissorHand(this.jokenpoStrategyFactoryService.createStrategy(HAND_TYPE.SCISSOR)),
+            new PaperHand(this.jokenpoStrategyFactoryService.createStrategy(HAND_TYPE.PAPER)),
+            new RockHand(this.jokenpoStrategyFactoryService.createStrategy(HAND_TYPE.ROCK)),
+        ];
+    }
 }
