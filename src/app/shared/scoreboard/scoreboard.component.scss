@@ -1,0 +1,39 @@
+@import '../../../scss/variables.scss';
+
+.scoreboard {
+    text-align: center;
+    width: 300px;
+    margin: 32px auto;
+    padding: 16px 32px;
+
+    &__header {
+        justify-content: center;
+    }
+    &__versus-sign {
+        font-size: 48px;
+        color: $red;
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__score {
+        box-shadow: 4px 9px 15px $gray_shadow;
+        font-size: 3em;
+        color: $black;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        padding: 13px 20px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $gray_card;
+
+        &-winner {
+            background: $primary_color;
+            color: white;
+        }
+    }
+}
