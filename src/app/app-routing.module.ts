@@ -5,10 +5,10 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+        loadChildren: () => import('./home/welcome.module').then((m) => m.HomeModule),
     },
     {
-        path: 'game',
+        path: 'game-session',
         loadChildren: () =>
             import('./jokenpo-game/jokenpo-game.module').then((m) => m.JokenpoGameModule),
     },
