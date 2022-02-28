@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HAND_TYPE } from '../enums';
 import { PaperHand, RockHand, ScissorHand } from '../models';
+import { randomEnum } from '../utils';
 import { JokenpoStrategyFactoryService } from './jokenpo-strategy-factory.service';
 
 @Injectable({
@@ -23,9 +24,8 @@ export class HandFactoryService {
         }
     }
 
-    // createForComputer() {
-    //     switch () {
-
-    //     }
-    // }
+    createHandRandom() {
+        const randomHandType = randomEnum(HAND_TYPE);
+        return this.create(randomHandType);
+    }
 }

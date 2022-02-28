@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { END_GAME_RESULT, HAND_TYPE } from '../enums';
-import { PaperHand, RockHand, ScissorHand } from '../models';
-
+import { Hand } from '../interfaces';
+import { AbstractHand } from '../models';
 import { HandFactoryService } from './hand-factory.service';
 
 describe('HandFactoryService', () => {
@@ -77,5 +77,11 @@ describe('HandFactoryService', () => {
         const secondPlayerHand = service.create(HAND_TYPE.PAPER);
 
         expect(fistPlayerHand.playAgainst(secondPlayerHand)).toEqual(END_GAME_RESULT.DEFEAT);
+    });
+
+    // In the future would be nice to update the random test in a better way
+    it('Should return a hand when call method createHandRandom', () => {
+        const hand = service.createHandRandom();
+        expect(hand).toBeInstanceOf(AbstractHand);
     });
 });
