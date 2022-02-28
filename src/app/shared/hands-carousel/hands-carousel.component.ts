@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Hand } from 'src/app/core/interfaces';
+import { Hand } from '../../core/interfaces';
 
 @Component({
     selector: 'app-hands-carousel',

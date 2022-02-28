@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Hand } from 'src/app/core/interfaces';
-import { HandFactoryService } from 'src/app/core/services/hand-factory.service';
+import { Hand } from '../../core/interfaces';
+import { HandFactoryService } from '../../core/services/hand-factory.service';
 import { GameMatch, Player } from '../../core/models';
 
 @Component({
