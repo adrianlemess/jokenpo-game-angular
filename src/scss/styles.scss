@@ -4,7 +4,23 @@ body {
     min-height: 100%;
     font-family: 'Roboto', Arial, Helvetica, sans-serif !important;
     line-height: 1em;
+    margin: 0;
     position: relative;
     background: $gray_light;
-  }
-  
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.col {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.col:last-child {
+    margin-right: 0;
+}
