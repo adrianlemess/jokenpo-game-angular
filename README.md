@@ -12,7 +12,9 @@ This is a home task project to create a Jokenpo game in Angular.
   - [Scripts Available](#scripts-available)
   - [Husky](#husky)
   - [Tests](#tests)
-  - [Business layer](#business-layer)
+  - [Code design](#code-design)
+    - [Architecture diagram](#architecture-diagram)
+    - [Modules](#modules)
   - [Considerations](#considerations)
   - [Possible improvements](#possible-improvements)
   - [Deploy](#deploy)
@@ -104,8 +106,9 @@ I've added Husky to enable some hooks to run before commit and pushing code. I'v
 
 ## Tests
 
-## Business layer
+## Code design
 
+### Architecture diagram
 I've started the application by thinking about the model and how I would model the application. For doing this I've decided to use two design patterns: `Strategy` and `Factory`. 
 
 The following diagram was my initial idea:
@@ -122,6 +125,10 @@ I have two factories:
   * createForComputer: it's a method to return with a random logic, a hand with strategy.
 * As the logic to know which hand win of each hand (example: Rock x Paper), it's the logic we'd probably change in the future if we need to add a new hand, I isolated as a strategy, this way if we need to add a new hand we will not update the previous one, only the strategy layer. 
 
+### Modules
+
+* LayoutModule - Will have only the components shared across all routes, which is header and footer for this application. This module is for performance issues, because now we can have a `SharedModule` with the components used only in some views and not loading `SharedModule` every time.
+* Core folder - All services, models, interfaces, enum, interfaces and independent files will be available here. 
 ## Considerations
 
 * Moved Karma/Jasmine to Jest and Testing library, to have quick tests running and also to focus on integration tests with Testing library
