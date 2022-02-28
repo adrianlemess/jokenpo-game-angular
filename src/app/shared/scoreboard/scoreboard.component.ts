@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Player } from 'src/app/core/models';
+import { Player } from '../../core/models';
 
 @Component({
     selector: 'app-scoreboard',

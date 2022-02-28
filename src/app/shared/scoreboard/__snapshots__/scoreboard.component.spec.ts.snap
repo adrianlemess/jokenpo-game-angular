@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScoreboardComponent Should show both with the same color when is tie the score: Tie score 1`] = `
+<app-scoreboard
+  __ngContext__={[Function LRootView]}
+  firstPlayer={[Function Player]}
+  scoreboardTitle={[Function String]}
+  secondPlayer={[Function Player]}
+>
+  <mat-card
+    class="mat-card mat-focus-indicator scoreboard"
+  >
+    <mat-card-header
+      class="mat-card-header scoreboard__header"
+    >
+      <div
+        class="mat-card-header-text"
+      >
+        <mat-card-title
+          class="mat-card-title"
+        >
+          Test
+        </mat-card-title>
+      </div>
+    </mat-card-header>
+    <mat-card-content
+      class="mat-card-content"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col"
+        >
+          <mat-card-subtitle
+            class="mat-card-subtitle"
+          >
+            First Player: Luke Skywalker
+          </mat-card-subtitle>
+        </div>
+        <div
+          class="col"
+        >
+          <mat-card-subtitle
+            class="mat-card-subtitle"
+          >
+            Second Player: R2D2
+          </mat-card-subtitle>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col"
+        >
+          <div
+            class="scoreboard__score"
+          >
+             0 
+          </div>
+        </div>
+        <div
+          class="col"
+        >
+          <span
+            class="scoreboard__versus-sign"
+          >
+             X 
+          </span>
+        </div>
+        <div
+          class="col"
+        >
+          <div
+            class="scoreboard__score"
+          >
+             0 
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</app-scoreboard>
+`;
+
+exports[`ScoreboardComponent Should show the first with a different color when the first player is winning: Tie score 1`] = `
+<app-scoreboard
+  __ngContext__={[Function LRootView]}
+  firstPlayer={[Function Player]}
+  scoreboardTitle={[Function String]}
+  secondPlayer={[Function Player]}
+>
+  <mat-card
+    class="mat-card mat-focus-indicator scoreboard"
+  >
+    <mat-card-header
+      class="mat-card-header scoreboard__header"
+    >
+      <div
+        class="mat-card-header-text"
+      >
+        <mat-card-title
+          class="mat-card-title"
+        >
+          Test
+        </mat-card-title>
+      </div>
+    </mat-card-header>
+    <mat-card-content
+      class="mat-card-content"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col"
+        >
+          <mat-card-subtitle
+            class="mat-card-subtitle"
+          >
+            First Player: Luke Skywalker
+          </mat-card-subtitle>
+        </div>
+        <div
+          class="col"
+        >
+          <mat-card-subtitle
+            class="mat-card-subtitle"
+          >
+            Second Player: R2D2
+          </mat-card-subtitle>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col"
+        >
+          <div
+            class="scoreboard__score scoreboard__score-winner"
+          >
+             1 
+          </div>
+        </div>
+        <div
+          class="col"
+        >
+          <span
+            class="scoreboard__versus-sign"
+          >
+             X 
+          </span>
+        </div>
+        <div
+          class="col"
+        >
+          <div
+            class="scoreboard__score"
+          >
+             0 
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</app-scoreboard>
+`;
+
+exports[`ScoreboardComponent Should show the second with a different color when the second player is winning: Tie score 1`] = `
+<app-scoreboard
+  __ngContext__={[Function LRootView]}
+  firstPlayer={[Function Player]}
+  scoreboardTitle={[Function String]}
+  secondPlayer={[Function Player]}
+>
+  <mat-card
+    class="mat-card mat-focus-indicator scoreboard"
+  >
+    <mat-card-header
+      class="mat-card-header scoreboard__header"
+    >
+      <div
+        class="mat-card-header-text"
+      >
+        <mat-card-title
+          class="mat-card-title"
+        >
+          Test
+        </mat-card-title>
+      </div>
+    </mat-card-header>
+    <mat-card-content
+      class="mat-card-content"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col"
+        >
+          <mat-card-subtitle
+            class="mat-card-subtitle"
+          >
+            First Player: Luke Skywalker
+          </mat-card-subtitle>
+        </div>
+        <div
+          class="col"
+        >
+          <mat-card-subtitle
+            class="mat-card-subtitle"
+          >
+            Second Player: R2D2
+          </mat-card-subtitle>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col"
+        >
+          <div
+            class="scoreboard__score"
+          >
+             0 
+          </div>
+        </div>
+        <div
+          class="col"
+        >
+          <span
+            class="scoreboard__versus-sign"
+          >
+             X 
+          </span>
+        </div>
+        <div
+          class="col"
+        >
+          <div
+            class="scoreboard__score scoreboard__score-winner"
+          >
+             2 
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</app-scoreboard>
+`;
