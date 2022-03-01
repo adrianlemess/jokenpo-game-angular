@@ -4,16 +4,7 @@ export class GameMatch {
     constructor(
         public firstPlayer: Player,
         public secondPlayer: Player,
-        private matchScoreEnd: number
+        public matchScoreEnd: number,
+        public delayPerRoundInMs: number = 1000
     ) {}
-
-    checkWinner(): Player | null {
-        if (this.firstPlayer.score === this.matchScoreEnd) {
-            return this.firstPlayer;
-        } else if (this.firstPlayer.score === this.matchScoreEnd) {
-            return this.secondPlayer;
-        }
-
-        return null;
-    }
 }

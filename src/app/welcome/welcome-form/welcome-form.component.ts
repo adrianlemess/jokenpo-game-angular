@@ -23,6 +23,7 @@ export class WelcomeFormComponent {
             playerType: [{ value: this.playerType.COMPUTER, disabled: true }],
         }),
         matchScoreEnd: [1, [Validators.required]],
+        delayPerRoundInMs: 1000,
     });
 
     constructor(private fb: FormBuilder, private router: Router) {}
