@@ -7,13 +7,16 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { JokenpoPanelComponent } from './jokenpo-panel/jokenpo-panel.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-    declarations: [JokenpoGameComponent],
+    declarations: [JokenpoGameComponent, JokenpoPanelComponent],
     imports: [
         CommonModule,
         JokenpoGameRoutingModule,
         MatButtonToggleModule,
+        MatCardModule,
         MatButtonModule,
         MatIconModule,
         SharedModule,

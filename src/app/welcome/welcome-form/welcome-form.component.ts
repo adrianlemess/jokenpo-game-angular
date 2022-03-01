@@ -3,6 +3,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PLAYER_TYPE } from '../../core/enums';
 
+// Constant values used to start the jokenpoForm attributes
+const DEFAULT_MATCH_SCORE_END = 3;
+const DEFAULT_SCORE_PLAYER = 0;
+const DEFAULT_DELAY_PER_ROUND = 1000;
 @Component({
     selector: 'app-welcome-form',
     templateUrl: './welcome-form.component.html',
@@ -14,16 +18,16 @@ export class WelcomeFormComponent {
     jokenpoForm = this.fb.group({
         firstPlayer: this.fb.group({
             username: ['', [Validators.required]],
-            score: [0, [Validators.required, Validators.min(0)]],
+            score: [DEFAULT_SCORE_PLAYER, [Validators.required, Validators.min(0)]],
             playerType: [this.playerType.HUMAN, [Validators.required]],
         }),
         secondPlayer: this.fb.group({
             username: ['', [Validators.required]],
-            score: [0, [Validators.required]],
+            score: [DEFAULT_SCORE_PLAYER, [Validators.required]],
             playerType: [{ value: this.playerType.COMPUTER, disabled: true }],
         }),
-        matchScoreEnd: [1, [Validators.required]],
-        delayPerRoundInMs: 1000,
+        matchScoreEnd: [DEFAULT_MATCH_SCORE_END, [Validators.required]],
+        delayPerRoundInMs: DEFAULT_DELAY_PER_ROUND,
     });
 
     constructor(private fb: FormBuilder, private router: Router) {}

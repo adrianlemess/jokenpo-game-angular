@@ -1,66 +1,37 @@
-<div class="row">
-    <div class="col">
-        <app-hands-carousel
-            [hands]="listHands"
-            [carouselTitle]="this.firstPlayer.username"
-            [carouselSubtitle]="this.FirstPlayerType"
-            [selectedHand]="firstPlayerSelectedHand"
-        ></app-hands-carousel>
-    </div>
-    <div class="col">
-        <app-scoreboard
-            [firstPlayer]="this.firstPlayer"
-            [secondPlayer]="this.secondPlayer"
-            scoreboardTitle="Jokenpo Match"
-        ></app-scoreboard>
-    </div>
-    <div class="col">
-        <app-hands-carousel
-            [hands]="listHands"
-            [carouselTitle]="this.secondPlayer.username"
-            [carouselSubtitle]="this.secondPlayer.playerType"
-            [selectedHand]="secondPlayerSelectedHand"
-        ></app-hands-carousel>
-    </div>
-    <div class="row">
-        <div class="col display-center">
-            <h3>Select a hand and click play to start a match</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col display-center">
-            <button
-                [disabled]="IsPlayButtonDisabled"
-                mat-raised-button
-                (click)="playMatch()"
-                color="primary"
+<app-jokenpo-panel
+    [firstPlayer]="this.firstPlayer"
+    [secondPlayer]="this.secondPlayer"
+    [matchScoreEnd]="matchScoreEnd"
+    [delayPerRoundInMs]="delayPerRoundInMs"
+    *ngIf="gameInProgress; else gameFinished"
+    (finishTheGame)="onFinishTheGame($event)"
+></app-jokenpo-panel>
+
+<ng-template #gameFinished>
+    <mat-card class="jokenpo-game">
+        <mat-card-header>
+            <mat-card-title>
+                The game has ended and the winner was
+                {{ this.winnerPlayer?.username }}</mat-card-title
             >
-                Play
-            </button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col display-center">
-            <mat-button-toggle-group
-                [(ngModel)]="firstPlayerSelectedHand"
-                *ngIf="IsFirstPlayerHuman"
-                class="jokenpo-game__button-toggle"
-                name="fontStyle"
-                aria-label="Font Style"
-            >
-                <mat-button-toggle
-                    *ngFor="let hand of listHands"
-                    (click)="onClickHand(hand)"
-                    [value]="hand"
-                >
-                    <img
-                        [src]="hand.avatarImgUrl"
-                        class="jokenpo-game__icon"
-                        [alt]="'Hand image' + hand.name"
-                    />
-                    {{ hand.name }}</mat-button-toggle
-                >
-            </mat-button-toggle-group>
-        </div>
-    </div>
-</div>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-card-subtitle>What would you like to do next?</mat-card-subtitle>
+
+            <div class="row">
+                <div class="col">
+                    <button mat-raised-button color="primary" (click)="resetGame()">
+                        Play again with the same configs
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button mat-raised-button color="secondary" (click)="navigateToWelcomePage()">
+                        Change game configs
+                    </button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</ng-template>
