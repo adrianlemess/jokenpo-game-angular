@@ -20,4 +20,6 @@ describe('JokenpoGameComponent', () => {
     it('should create', () => {
         expect(true).toBeTruthy();
     });
+
+    it('Should play be disable when firstPlayer is human and didnt select a hand', () => {});
 });

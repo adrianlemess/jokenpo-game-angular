@@ -2,32 +2,57 @@
     <div class="col">
         <app-hands-carousel
             [hands]="listHands"
-            [carouselTitle]="this.gameConfigs.firstPlayer.username"
-            [carouselSubtitle]="this.gameConfigs.firstPlayer.playerType"
+            [carouselTitle]="this.firstPlayer.username"
+            [carouselSubtitle]="this.FirstPlayerType"
+            [selectedHand]="firstPlayerSelectedHand"
         ></app-hands-carousel>
     </div>
     <div class="col">
         <app-scoreboard
-            [firstPlayer]="this.gameConfigs.firstPlayer"
-            [secondPlayer]="this.gameConfigs.secondPlayer"
+            [firstPlayer]="this.firstPlayer"
+            [secondPlayer]="this.secondPlayer"
             scoreboardTitle="Jokenpo Match"
         ></app-scoreboard>
     </div>
     <div class="col">
         <app-hands-carousel
             [hands]="listHands"
-            [carouselTitle]="this.gameConfigs.secondPlayer.username"
-            [carouselSubtitle]="this.gameConfigs.secondPlayer.playerType"
+            [carouselTitle]="this.secondPlayer.username"
+            [carouselSubtitle]="this.secondPlayer.playerType"
+            [selectedHand]="secondPlayerSelectedHand"
         ></app-hands-carousel>
     </div>
     <div class="row">
         <div class="col display-center">
+            <h3>Select a hand and click play to start a match</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col display-center">
+            <button
+                [disabled]="IsPlayButtonDisabled"
+                mat-raised-button
+                (click)="playMatch()"
+                color="primary"
+            >
+                Play
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col display-center">
             <mat-button-toggle-group
+                [(ngModel)]="firstPlayerSelectedHand"
+                *ngIf="IsFirstPlayerHuman"
                 class="jokenpo-game__button-toggle"
                 name="fontStyle"
                 aria-label="Font Style"
             >
-                <mat-button-toggle *ngFor="let hand of listHands" value="bold">
+                <mat-button-toggle
+                    *ngFor="let hand of listHands"
+                    (click)="onClickHand(hand)"
+                    [value]="hand"
+                >
                     <img
                         [src]="hand.avatarImgUrl"
                         class="jokenpo-game__icon"

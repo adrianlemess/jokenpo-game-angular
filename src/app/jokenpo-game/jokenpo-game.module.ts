@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
     declarations: [JokenpoGameComponent],
@@ -13,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
         CommonModule,
         JokenpoGameRoutingModule,
         MatButtonToggleModule,
+        MatButtonModule,
         MatIconModule,
         SharedModule,
         FormsModule,
