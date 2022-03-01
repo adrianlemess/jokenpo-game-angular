@@ -9,10 +9,11 @@
         width: 24px;
         height: auto;
     }
-    .col {
-        order: 2;
-    }
-    .col:nth-child(2) {
-        order: 1;
+
+    @include for-phone-only {
+        .col:nth-child(2) {
+            order: -1;
+            flex: 1 0 100%;
+        }
     }
 }
