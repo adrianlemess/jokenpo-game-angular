@@ -1,26 +1,28 @@
-<div class="row">
-    <div class="col">
-        <app-hands-carousel
-            [hands]="listHands"
-            [carouselTitle]="this.firstPlayer.username"
-            [carouselSubtitle]="this.FirstPlayerType"
-            [selectedHand]="firstPlayerSelectedHand"
-        ></app-hands-carousel>
-    </div>
-    <div class="col">
-        <app-scoreboard
-            [firstPlayer]="this.firstPlayer"
-            [secondPlayer]="this.secondPlayer"
-            scoreboardTitle="Jokenpo Match"
-        ></app-scoreboard>
-    </div>
-    <div class="col">
-        <app-hands-carousel
-            [hands]="listHands"
-            [carouselTitle]="this.secondPlayer.username"
-            [carouselSubtitle]="this.secondPlayer.playerType"
-            [selectedHand]="secondPlayerSelectedHand"
-        ></app-hands-carousel>
+<div class="jokenpo-panel">
+    <div class="row">
+        <div class="col">
+            <app-hands-carousel
+                [hands]="listHands"
+                [carouselTitle]="this.firstPlayer.username"
+                [carouselSubtitle]="this.FirstPlayerType"
+                [selectedHand]="firstPlayerSelectedHand"
+            ></app-hands-carousel>
+        </div>
+        <div class="col">
+            <app-scoreboard
+                [firstPlayer]="this.firstPlayer"
+                [secondPlayer]="this.secondPlayer"
+                scoreboardTitle="Jokenpo Match"
+            ></app-scoreboard>
+        </div>
+        <div class="col">
+            <app-hands-carousel
+                [hands]="listHands"
+                [carouselTitle]="this.secondPlayer.username"
+                [carouselSubtitle]="this.secondPlayer.playerType"
+                [selectedHand]="secondPlayerSelectedHand"
+            ></app-hands-carousel>
+        </div>
     </div>
     <div class="row">
         <div class="col display-center" *ngIf="IsFirstPlayerHuman; else instructionsComputer">

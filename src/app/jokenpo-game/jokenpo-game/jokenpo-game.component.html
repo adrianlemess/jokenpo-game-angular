@@ -1,37 +1,43 @@
-<app-jokenpo-panel
-    [firstPlayer]="this.firstPlayer"
-    [secondPlayer]="this.secondPlayer"
-    [matchScoreEnd]="matchScoreEnd"
-    [delayPerRoundInMs]="delayPerRoundInMs"
-    *ngIf="gameInProgress; else gameFinished"
-    (finishTheGame)="onFinishTheGame($event)"
-></app-jokenpo-panel>
+<div class="jokenpo-game">
+    <app-jokenpo-panel
+        [firstPlayer]="this.firstPlayer"
+        [secondPlayer]="this.secondPlayer"
+        [matchScoreEnd]="matchScoreEnd"
+        [delayPerRoundInMs]="delayPerRoundInMs"
+        *ngIf="gameInProgress; else gameFinished"
+        (finishTheGame)="onFinishTheGame($event)"
+    ></app-jokenpo-panel>
 
-<ng-template #gameFinished>
-    <mat-card class="jokenpo-game">
-        <mat-card-header>
-            <mat-card-title>
-                The game has ended and the winner was
-                {{ this.winnerPlayer?.username }}</mat-card-title
-            >
-        </mat-card-header>
-        <mat-card-content>
-            <mat-card-subtitle>What would you like to do next?</mat-card-subtitle>
+    <ng-template #gameFinished>
+        <mat-card class="jokenpo-game__end-game">
+            <mat-card-header>
+                <mat-card-title>
+                    The game has ended and the winner was
+                    {{ this.winnerPlayer?.username }}</mat-card-title
+                >
+            </mat-card-header>
+            <mat-card-content>
+                <mat-card-subtitle>What would you like to do next?</mat-card-subtitle>
 
-            <div class="row">
-                <div class="col">
-                    <button mat-raised-button color="primary" (click)="resetGame()">
-                        Play again with the same configs
-                    </button>
+                <div class="row">
+                    <div class="col">
+                        <button mat-raised-button color="primary" (click)="resetGame()">
+                            Play again with the same configs
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button mat-raised-button color="secondary" (click)="navigateToWelcomePage()">
-                        Change game configs
-                    </button>
+                <div class="row">
+                    <div class="col">
+                        <button
+                            mat-raised-button
+                            color="secondary"
+                            (click)="navigateToWelcomePage()"
+                        >
+                            Change game configs
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </mat-card-content>
-    </mat-card>
-</ng-template>
+            </mat-card-content>
+        </mat-card>
+    </ng-template>
+</div>
