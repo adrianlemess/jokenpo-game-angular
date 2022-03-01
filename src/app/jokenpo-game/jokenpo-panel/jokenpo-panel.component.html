@@ -23,9 +23,14 @@
         ></app-hands-carousel>
     </div>
     <div class="row">
-        <div class="col display-center">
+        <div class="col display-center" *ngIf="IsFirstPlayerHuman; else instructionsComputer">
             <h3>Select a hand and click play to start a match</h3>
         </div>
+        <ng-template #instructionsComputer>
+            <div class="col display-center">
+                <h3>Click play to watch a match</h3>
+            </div>
+        </ng-template>
     </div>
     <div class="row">
         <div class="col display-center">
