@@ -66,6 +66,7 @@ exports[`ScoreboardComponent Should show both with the same color when is tie th
         >
           <div
             class="scoreboard__score"
+            data-testid="first-player-score"
           >
              0 
           </div>
@@ -84,6 +85,7 @@ exports[`ScoreboardComponent Should show both with the same color when is tie th
         >
           <div
             class="scoreboard__score"
+            data-testid="second-player-score"
           >
              0 
           </div>
@@ -160,6 +162,7 @@ exports[`ScoreboardComponent Should show the first with a different color when t
         >
           <div
             class="scoreboard__score scoreboard__score-winner"
+            data-testid="first-player-score"
           >
              1 
           </div>
@@ -178,6 +181,7 @@ exports[`ScoreboardComponent Should show the first with a different color when t
         >
           <div
             class="scoreboard__score"
+            data-testid="second-player-score"
           >
              0 
           </div>
@@ -254,6 +258,7 @@ exports[`ScoreboardComponent Should show the second with a different color when 
         >
           <div
             class="scoreboard__score"
+            data-testid="first-player-score"
           >
              0 
           </div>
@@ -272,6 +277,7 @@ exports[`ScoreboardComponent Should show the second with a different color when 
         >
           <div
             class="scoreboard__score scoreboard__score-winner"
+            data-testid="second-player-score"
           >
              2 
           </div>
