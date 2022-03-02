@@ -36,6 +36,7 @@ This is a project to create a Jokenpo game in Angular.
 |-----------------|----------------------------|
 | Application          | [![Netlify Status](https://api.netlify.com/api/v1/badges/0ebd19f0-c150-4bb2-9dd1-e32ffcc8d5e7/deploy-status)](https://app.netlify.com/sites/jokenpo-game-adrian/deploys) |
 | Documentation | [![Netlify Status](https://api.netlify.com/api/v1/badges/edf9446b-336b-460d-b6a8-1bfd5f8cce22/deploy-status)](https://app.netlify.com/sites/jokenpo-adrian-docs/deploys) |
+
 ## Board with tasks
 
 If you would like to check how I organize my tasks, you can check my board on Trello [here](https://trello.com/b/wX98RPXL/jokenpo-game)
@@ -154,7 +155,8 @@ I have two factories:
   * createHandRandom: it's a method to return with a random logic, a hand with strategy.
 * As the logic to know which hand win of each hand (example: Rock x Paper), it's the logic we'd probably change in the future if we need to add a new hand, I isolated as a strategy, this way if we need to add a new hand we will not update the previous one, only the strategy layer. 
 
-NOTE: Some methods and models were modified once I've started coding, the diagram was my initial idea and help me to setup everything fast and validate on paper first.
+NOTE: Some methods and models were modified once I've started coding, the diagram was my initial idea and help me to setup everything faster and validate on "paper" first (paper is cheaper if I make mistake).
+
 ### Modules
 
 * LayoutModule - Will have only the components shared across all routes, which is header and footer for this application. This module is for performance issues, because now we can have a `SharedModule` with the components used only in some views and not loading `SharedModule` every time.
@@ -166,6 +168,7 @@ NOTE: Some methods and models were modified once I've started coding, the diagra
 You probably might noticed in the route `game-session` where the game happens, I have a few parameters in the route, which is filled in the welcome view. I did that, because this way if the user wants to refresh the page, he won't loose the configurations. 
 
 The options to avoid loosing the configurations would be localStorage or the way I did, for simplicity I thought better with queryParams.
+
 ## Considerations
 
 * Moved Karma/Jasmine to Jest and Testing library, to have quick tests running and also to focus on integration tests with Testing library
@@ -180,6 +183,7 @@ The options to avoid loosing the configurations would be localStorage or the way
 * Add tests for the welcome view, I've decided to focus on the game, which was the core feature
 * Also I could add some alerts on each rounds, to show who wins the round, for the user perspective sometimes might be confused or too fast to understand who won
 * Also if the user try to open the `game-session` direct, without the config parameters, will redirect to welcome page without any user feedback, would be good to have some alert
+* 
 ## Deploy
 
 To make the code shippable to production, I've setup two ways, the first one with Dockerfile and the second one with CI and Netlify.
