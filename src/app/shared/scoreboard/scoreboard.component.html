@@ -24,6 +24,7 @@
         <div class="row">
             <div class="col">
                 <div
+                    data-testid="first-player-score"
                     class="scoreboard__score"
                     [ngClass]="{
                         'scoreboard__score-winner': firstPlayer.score > secondPlayer.score
@@ -37,6 +38,7 @@
             </div>
             <div class="col">
                 <div
+                    data-testid="second-player-score"
                     class="scoreboard__score"
                     [ngClass]="{
                         'scoreboard__score-winner': secondPlayer.score > firstPlayer.score
