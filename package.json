@@ -14,7 +14,7 @@
     "prepare": "husky install",
     "lint": "ng lint",
     "lint:fix": "npm run lint -- --fix",
-    "compodoc:build": "compodoc -p tsconfig.doc.json",
+    "compodoc:build": "compodoc -p tsconfig.doc.json && cp -R docs-image ./documentation/",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
     "compodoc:serve": "compodoc -s",
     "e2e": "ng e2e",
