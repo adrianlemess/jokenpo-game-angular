@@ -9,6 +9,10 @@ body {
     background: $gray_light;
 }
 
+.full-width {
+    width: 100%;
+}
+
 .row {
     display: flex;
     flex-direction: row;

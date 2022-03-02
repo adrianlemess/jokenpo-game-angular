@@ -1,7 +1,6 @@
 import { ComponentFixture, fakeAsync, TestBed, waitForAsync } from '@angular/core/testing';
 import { render, screen, waitFor } from '@testing-library/angular';
 import { createMock } from '@testing-library/angular/jest-utils';
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -11,6 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+
 import { TestingModule } from '../../../testing/testing.module';
 import { JokenpoPanelComponent } from '../jokenpo-panel/jokenpo-panel.component';
 import { JokenpoGameComponent } from './jokenpo-game.component';
