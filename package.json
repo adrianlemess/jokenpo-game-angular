@@ -19,7 +19,8 @@
     "compodoc:serve": "compodoc -s",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "postinstall": "ngcc"
   },
   "lint-staged": {
     "src/**/*.{ts,css,html}": [
@@ -43,6 +44,7 @@
     "@compodoc/compodoc": "^1.1.19",
     "@ng-bootstrap/ng-bootstrap": "^12.0.0",
     "@popperjs/core": "^2.10.2",
+    "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.1.3",
     "jquery": "^3.6.0",
     "rxjs": "~7.5.0",
@@ -62,6 +64,7 @@
     "@commitlint/config-angular": "^16.2.1",
     "@cypress/schematic": "^1.6.0",
     "@testing-library/angular": "^11.0.3",
+    "@testing-library/jest-dom": "^5.16.2",
     "@types/jest": "^27.4.1",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.11.0",

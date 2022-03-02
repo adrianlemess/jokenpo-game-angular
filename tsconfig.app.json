@@ -4,7 +4,9 @@
   "compilerOptions": {
     "outDir": "./out-tsc/app",
     "noUnusedLocals": true,
-    "types": []
+    "types": [
+      "@testing-library/jest-dom"
+    ]
   },
   "files": [
     "src/main.ts",
@@ -12,5 +14,8 @@
   ],
   "include": [
     "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "**/testing"
   ]
 }
