@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HandsCarouselComponent Should render with a list of hands: Hands list 1`] = `
+<div
+  id="root1"
+>
+  <div
+    class="carousel container-fluid"
+  >
+    <h1>
+      
+    </h1>
+    <h3>
+      
+    </h3>
+    <ngb-carousel
+      aria-activedescendant="slide-"
+      class="carousel slide"
+      data-testid="carousel-hands"
+      style="display: block;"
+      tabindex="0"
+    >
+      <ol
+        class="carousel-indicators visually-hidden"
+        role="tablist"
+      >
+        
+      </ol>
+      <div
+        class="carousel-inner"
+      >
+        
+      </div>
+      
+      
+    </ngb-carousel>
+  </div>
+</div>
+`;
+
+exports[`HandsCarouselComponent Should render with no hands and only carouselTitle and subtitle: Hands empty 1`] = `
+<div
+  id="root0"
+>
+  <div
+    class="carousel container-fluid"
+  >
+    <h1>
+      
+    </h1>
+    <h3>
+      
+    </h3>
+    <ngb-carousel
+      aria-activedescendant="slide-"
+      class="carousel slide"
+      data-testid="carousel-hands"
+      style="display: block;"
+      tabindex="0"
+    >
+      <ol
+        class="carousel-indicators visually-hidden"
+        role="tablist"
+      >
+        
+      </ol>
+      <div
+        class="carousel-inner"
+      >
+        
+      </div>
+      
+      
+    </ngb-carousel>
+  </div>
+</div>
+`;
