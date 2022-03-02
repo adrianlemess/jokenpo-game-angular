@@ -12,9 +12,15 @@ This is a home task project to create a Jokenpo game in Angular.
   - [Scripts Available](#scripts-available)
   - [Husky](#husky)
   - [Tests](#tests)
+    - [Unit tests](#unit-tests)
+    - [Snapshot tests](#snapshot-tests)
+    - [Integration tests](#integration-tests)
+    - [End to End tests](#end-to-end-tests)
+    - [Testing folder](#testing-folder)
   - [Code design](#code-design)
     - [Architecture diagram](#architecture-diagram)
     - [Modules](#modules)
+    - [QueryParams](#queryparams)
   - [Considerations](#considerations)
   - [Possible improvements](#possible-improvements)
   - [Deploy](#deploy)
@@ -54,6 +60,7 @@ If you want to test the application deployed you can check [here](https://jokenp
 * VSCode
 * GIT
 * Angular/CLI version 13.2.5
+* Chrome, Safari or Firefox - In my tests should work in all those browsers, however Chrome is where I've tested most of my time.
 ## How to install dependencies
 
 Install dependencies with:
@@ -92,10 +99,6 @@ npm start -  Run `ng serve` for a dev server. Navigate to `http://localhost:4200
 *npm run compodoc:build-and-serve - It will generate the document and serve in the port `8080`.
 
 *npm run compodoc:serve - If you already have compodoc files generated you can simple run the serve with this command, it will run on port `8080`
-
-*npm run cypress:open - It will open the Cypress devtools and run the tests.
-
-*npm run cypress:run - Run Cypress on headless mode, useful to run on CI.
 ## Husky
 
 I've added Husky to enable some hooks to run before commit and pushing code. I've added the following git hooks:
@@ -106,8 +109,34 @@ I've added Husky to enable some hooks to run before commit and pushing code. I'v
 
 ## Tests
 
+### Unit tests
+
+All my business layer it's covered with unit tests, we can for sure decouple the business layer and pass for a NodeJS service or even to another framework with only small adaptations
+### Snapshot tests
+
+I've added some snapshot tests for the components included on shared folder, since those components are only presentational components.
+
+### Integration tests
+
+I've created all the important tests in one place `jokenpo-game.component`, because this component will orchestrate the game. So inside this component I've also tested: `jokenpo-panel.component` and `shared module components`, all to see if the game is working
+
+### End to End tests
+
+With more time I would probably add tests with Cypress, but the random part for the computer x computer match would take me some time to understand how to properly test. So I've decided to skip those tests, since I've already have a good coverage of business covered already with integration tests.
+
+### Testing folder
+
+I've created two testing folder:
+
+- src/testing - contains a TestingModule to help import testing modules and a dummy component to be reusable in mock routes
+- src/app/jokenpo-game/jokenpo-game/testing - contains some files to help to make integration tests for the component. I didn't need to create this folder, but I've created to improve readability on the test file.
+
+Both folders is excluded on jest.config and typescript build.
 ## Code design
 
+All my decisions was to try decouple business layer from UI. If we need to extend the code in some point of the future we will only need to update the business layer. 
+
+And inside the business layer we will have small changes on strategies and need to add new entities in the Hand model and also modified the factories.
 ### Architecture diagram
 I've started the application by thinking about the model and how I would model the application. For doing this I've decided to use two design patterns: `Strategy` and `Factory`. 
 
@@ -122,21 +151,36 @@ I have two factories:
 * JokenpoStrategyFactory - responsible to return a strategy that match with the type passed.
 * HandFactory - has two method to return the hand with the correspondent strategy. 
   * create: we pass the option type and return the correspondent hand
-  * createForComputer: it's a method to return with a random logic, a hand with strategy.
+  * createHandRandom: it's a method to return with a random logic, a hand with strategy.
 * As the logic to know which hand win of each hand (example: Rock x Paper), it's the logic we'd probably change in the future if we need to add a new hand, I isolated as a strategy, this way if we need to add a new hand we will not update the previous one, only the strategy layer. 
 
+NOTE: Some methods and models were modified once I've started coding, the diagram was my initial idea and help me to setup everything fast and validate on paper first.
 ### Modules
 
 * LayoutModule - Will have only the components shared across all routes, which is header and footer for this application. This module is for performance issues, because now we can have a `SharedModule` with the components used only in some views and not loading `SharedModule` every time.
 * Core folder - All services, models, interfaces, enum, interfaces and independent files will be available here. 
+* SharedModule - the modules to be shared across the application, today the components are used only in one place, to be honest those components could be inside the jokenpo-game module
+
+### QueryParams
+
+You probably might noticed in the route `game-session` where the game happens, I have a few parameters in the route, which is filled in the welcome view. I did that, because this way if the user wants to refresh the page, he won't loose the configurations. 
+
+The options to avoid loosing the configurations would be localStorage or the way I did, for simplicity I thought better with queryParams.
 ## Considerations
 
 * Moved Karma/Jasmine to Jest and Testing library, to have quick tests running and also to focus on integration tests with Testing library
+* I've added husky to improve the quality of the code and guarantee I won't push break code to the environment.
+* Probably I could done less things, but was fun for me to make the hometask and the game, that's why I took a few more days to complete the task with the things I consider good to show
+  * Also It's been a while since the last time I've used angular (1 year ago), so it took some time to remember stuffs
 
 ## Possible improvements
 
 * Add preview environment URL every time a PR is opened
 * Add test coverage badge on Readme
+* Add E2E tests to cover the core flows - I didn't add because I've already had a good number of integrations tests and I didn't prioritized 
+* Add tests for the welcome view, I've decided to focus on the game, which was the core feature
+* Also I could add some alerts on each rounds, to show who wins the round, for the user perspective sometimes might be confused or too fast to understand who won
+* Also if the user try to open the `game-session` direct, without the config parameters, will redirect to welcome page without any user feedback, would be good to have some alert
 ## Deploy
 
 To make the code shippable to production, I've setup two ways, the first one with Dockerfile and the second one with CI and Netlify.
@@ -147,7 +191,6 @@ To make the code shippable to production, I've setup two ways, the first one wit
 - Docker installed
 - Github account
 - Git
-
 
 ### Docker
 
@@ -176,6 +219,8 @@ Every code into `main` branch, trigger a pipeline with the following stages:
   * documentation
 * Deploy netlify - deploy the application from `dist` folder on Netlify
 * Deploy netlify - deploy the static documentation generated inside the `documentation` folder on Netlify
+
+![CI](docs-image/ci.png)
 
 ## Author
 
