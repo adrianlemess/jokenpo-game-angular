@@ -53,7 +53,7 @@ describe('ScoreboardComponent', () => {
         component.secondPlayer.score = 0;
         fixture.detectChanges();
 
-        expect(fixture).toMatchSnapshot('Tie score');
+        expect(fixture).toMatchSnapshot('Win score first player');
     });
 
     it('Should show the second with a different color when the second player is winning', () => {
@@ -61,6 +61,6 @@ describe('ScoreboardComponent', () => {
         component.secondPlayer.score = 2;
         fixture.detectChanges();
 
-        expect(fixture).toMatchSnapshot('Tie score');
+        expect(fixture).toMatchSnapshot('Win score second player');
     });
 });

@@ -4,6 +4,10 @@ import { HandFactoryService } from '../../core/services/hand-factory.service';
 import { Player } from '../../core/models';
 import { END_GAME_RESULT, PLAYER_TYPE } from '../../core/enums';
 
+/**
+ * This component it responsible to make the game working with all the rules for the match.
+ * Also every each round will check if someone wins or not
+ */
 @Component({
     selector: 'app-jokenpo-panel',
     templateUrl: './jokenpo-panel.component.html',

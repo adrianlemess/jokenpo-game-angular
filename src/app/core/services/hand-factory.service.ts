@@ -8,6 +8,11 @@ import { JokenpoStrategyFactoryService } from './jokenpo-strategy-factory.servic
     providedIn: 'root',
 })
 export class HandFactoryService {
+    private readonly allHands = [
+        new ScissorHand(this.jokenpoStrategyFactoryService.createStrategy(HAND_TYPE.SCISSOR)),
+        new PaperHand(this.jokenpoStrategyFactoryService.createStrategy(HAND_TYPE.PAPER)),
+        new RockHand(this.jokenpoStrategyFactoryService.createStrategy(HAND_TYPE.ROCK)),
+    ];
     constructor(private jokenpoStrategyFactoryService: JokenpoStrategyFactoryService) {}
 
     create(type: HAND_TYPE) {
@@ -30,10 +35,6 @@ export class HandFactoryService {
     }
 
     getAllHands() {
-        return [
-            new ScissorHand(this.jokenpoStrategyFactoryService.createStrategy(HAND_TYPE.SCISSOR)),
-            new PaperHand(this.jokenpoStrategyFactoryService.createStrategy(HAND_TYPE.PAPER)),
-            new RockHand(this.jokenpoStrategyFactoryService.createStrategy(HAND_TYPE.ROCK)),
-        ];
+        return this.allHands;
     }
 }

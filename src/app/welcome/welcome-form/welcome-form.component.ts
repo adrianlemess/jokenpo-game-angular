@@ -23,7 +23,7 @@ export class WelcomeFormComponent {
         }),
         secondPlayer: this.fb.group({
             username: ['', [Validators.required]],
-            score: [DEFAULT_SCORE_PLAYER, [Validators.required]],
+            score: [DEFAULT_SCORE_PLAYER, [Validators.required, Validators.min(0)]],
             playerType: [{ value: this.playerType.COMPUTER, disabled: true }],
         }),
         matchScoreEnd: [DEFAULT_MATCH_SCORE_END, [Validators.required]],

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GameMatch, Player } from '../../core/models';
 
 /**
- * This component is responsible to orchestrate a game, when it ends and also
+ * This component is responsible to orchestrate the result of a game, when it ends and also
  * give the user the possibility of reset a game after ends.
  */
 @Component({

@@ -96,7 +96,7 @@ exports[`ScoreboardComponent Should show both with the same color when is tie th
 </app-scoreboard>
 `;
 
-exports[`ScoreboardComponent Should show the first with a different color when the first player is winning: Tie score 1`] = `
+exports[`ScoreboardComponent Should show the first with a different color when the first player is winning: Win score first player 1`] = `
 <app-scoreboard
   __ngContext__={[Function LRootView]}
   firstPlayer={[Function Player]}
@@ -192,7 +192,7 @@ exports[`ScoreboardComponent Should show the first with a different color when t
 </app-scoreboard>
 `;
 
-exports[`ScoreboardComponent Should show the second with a different color when the second player is winning: Tie score 1`] = `
+exports[`ScoreboardComponent Should show the second with a different color when the second player is winning: Win score second player 1`] = `
 <app-scoreboard
   __ngContext__={[Function LRootView]}
   firstPlayer={[Function Player]}

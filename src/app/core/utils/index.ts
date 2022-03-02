@@ -1,6 +1,6 @@
 /**
  * Function to return a enum.
- * Get from: https://stackoverflow.com/questions/44230998/how-to-get-a-random-enum-in-typescript
+ * Got from: https://stackoverflow.com/questions/44230998/how-to-get-a-random-enum-in-typescript
  * I've decided to isolate this logic in a function to facilitate further tests
  */
 
