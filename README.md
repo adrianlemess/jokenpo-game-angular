@@ -183,7 +183,8 @@ The options to avoid loosing the configurations would be localStorage or the way
 * Add tests for the welcome view, I've decided to focus on the game, which was the core feature
 * Also I could add some alerts on each rounds, to show who wins the round, for the user perspective sometimes might be confused or too fast to understand who won
 * Also if the user try to open the `game-session` direct, without the config parameters, will redirect to welcome page without any user feedback, would be good to have some alert
-* 
+* Fix bug on Safari and IOs browsers when sometime the numbers on scoreboard has a weird effect
+
 ## Deploy
 
 To make the code shippable to production, I've setup two ways, the first one with Dockerfile and the second one with CI and Netlify.
