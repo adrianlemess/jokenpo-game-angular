@@ -77,7 +77,6 @@ export class JokenpoPanelComponent implements OnInit {
             this.finishTheGame.emit(this.secondPlayer);
         }
 
-        // Reset values after the delayPerRoundInMs
         setTimeout(() => {
             this.resetRound();
         }, this.delayPerRoundInMs);

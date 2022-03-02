@@ -57,6 +57,7 @@
             >
                 <mat-button-toggle
                     *ngFor="let hand of listHands"
+                    [attr.data-testid]="'hand-button-' + hand.name"
                     (click)="onClickHand(hand)"
                     [value]="hand"
                     [disabled]="disableActionsButton"
@@ -64,7 +65,7 @@
                     <img
                         [src]="hand.avatarImgUrl"
                         class="jokenpo-panel__icon"
-                        [alt]="'Hand image' + hand.name"
+                        [alt]="'Hand image toggle ' + hand.name"
                     />
                     {{ hand.name }}</mat-button-toggle
                 >

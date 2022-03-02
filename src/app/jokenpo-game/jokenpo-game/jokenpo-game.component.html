@@ -1,4 +1,4 @@
-<div class="jokenpo-game">
+<div class="jokenpo-game" *ngIf="firstPlayer">
     <app-jokenpo-panel
         [firstPlayer]="this.firstPlayer"
         [secondPlayer]="this.secondPlayer"

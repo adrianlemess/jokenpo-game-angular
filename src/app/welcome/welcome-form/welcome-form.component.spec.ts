@@ -7,7 +7,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 
 import { WelcomeFormComponent } from './welcome-form.component';
-import { TestingModule } from '../../testing/testing.module';
+import { TestingModule } from '../../../testing/testing.module';
 
 describe('WelcomeFormComponent', () => {
     let component: WelcomeFormComponent;

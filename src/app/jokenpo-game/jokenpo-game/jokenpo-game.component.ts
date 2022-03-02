@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GameMatch, Player } from '../../core/models';
 
@@ -11,7 +11,7 @@ import { GameMatch, Player } from '../../core/models';
     templateUrl: './jokenpo-game.component.html',
     styleUrls: ['./jokenpo-game.component.scss'],
 })
-export class JokenpoGameComponent implements OnInit {
+export class JokenpoGameComponent {
     // Configs variables loaded on ngOnInit from route params
     firstPlayer: Player;
     secondPlayer: Player;
@@ -23,9 +23,6 @@ export class JokenpoGameComponent implements OnInit {
 
     constructor(private route: ActivatedRoute, private router: Router) {
         this.gameInProgress = true;
-    }
-
-    ngOnInit(): void {
         this.initializeParamsOrRedirectToWelcomePage();
     }
 
@@ -37,7 +34,8 @@ export class JokenpoGameComponent implements OnInit {
             const { firstPlayer, secondPlayer, matchScoreEnd, delayPerRoundInMs } = new GameMatch(
                 new Player(gameConfigsParsed.firstPlayer),
                 new Player(gameConfigsParsed.secondPlayer),
-                gameConfigsParsed.matchScoreEnd
+                gameConfigsParsed.matchScoreEnd,
+                gameConfigsParsed.delayPerRoundInMs
             );
             this.firstPlayer = firstPlayer;
             this.secondPlayer = secondPlayer;
@@ -62,9 +60,5 @@ export class JokenpoGameComponent implements OnInit {
 
     navigateToWelcomePage() {
         this.router.navigate(['/welcome']);
-    }
-
-    get isWin(): boolean {
-        return true;
     }
 }
