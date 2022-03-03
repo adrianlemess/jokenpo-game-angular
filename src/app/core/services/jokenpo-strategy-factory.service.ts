@@ -15,19 +15,18 @@ export class JokenpoStrategyFactoryService {
     private readonly paperStrategy: PaperStrategy = new PaperStrategy();
     private readonly rockStrategy: RockStrategy = new RockStrategy();
     private readonly scissorStrategy: ScissorStrategy = new ScissorStrategy();
-
+    private strategiesMap = {
+        [HAND_TYPE.PAPER]: this.paperStrategy,
+        [HAND_TYPE.ROCK]: this.rockStrategy,
+        [HAND_TYPE.SCISSOR]: this.scissorStrategy,
+    };
     constructor() {}
 
     createStrategy(type: HAND_TYPE) {
-        switch (type) {
-            case HAND_TYPE.PAPER:
-                return this.paperStrategy;
-            case HAND_TYPE.ROCK:
-                return this.rockStrategy;
-            case HAND_TYPE.SCISSOR:
-                return this.scissorStrategy;
-            default:
-                throw new Error('Strategy not found');
+        if (this.strategiesMap[type]) {
+            return this.strategiesMap[type];
         }
+
+        throw new Error('Type not found');
     }
 }

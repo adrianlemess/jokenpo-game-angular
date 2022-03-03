@@ -3,16 +3,16 @@ import { JokenpoStrategy, Hand } from '../interfaces';
 import { StrategyError } from '../errors';
 
 export class PaperStrategy implements JokenpoStrategy {
+    private readonly playAgainstMap = {
+        [HAND_TYPE.PAPER]: END_GAME_RESULT.TIE,
+        [HAND_TYPE.SCISSOR]: END_GAME_RESULT.DEFEAT,
+        [HAND_TYPE.ROCK]: END_GAME_RESULT.WIN,
+    };
     playAgainst(hand: Hand): END_GAME_RESULT {
-        switch (hand.name) {
-            case HAND_TYPE.PAPER:
-                return END_GAME_RESULT.TIE;
-            case HAND_TYPE.SCISSOR:
-                return END_GAME_RESULT.DEFEAT;
-            case HAND_TYPE.ROCK:
-                return END_GAME_RESULT.WIN;
-            default:
-                throw new StrategyError('PaperStrategy');
+        if (this.playAgainstMap[hand.name]) {
+            return this.playAgainstMap[hand.name];
         }
+
+        throw new StrategyError('PaperStrategy');
     }
 }
